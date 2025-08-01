@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <style>
+        :root {
+            --primary: #ffb347;
+            --primary-dark: #ff9800;
+            --accent: #fffbe6;
+            --text: #222;
+            --text-light: #555;
+            --shadow: 0 4px 24px rgba(0,0,0,0.10);
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fceab0 0%, #fdd282 100%);
+            min-height: 100vh;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 24px 8px;
+        }
+        .main-flex {
+            display: flex;
+            gap: 32px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .data-dictionary-container {
+            flex: 1 1 340px;
+            max-width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            padding: 22px 18px 18px 22px;
+            color: #333;
+            font-size: 1.01em;
+            height: fit-content;
+            align-self: flex-start;
+        }
+        .data-dictionary-container h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.18em;
+            color: var(--primary-dark);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .data-dictionary-container ul {
+            margin: 0 0 0 16px;
+            padding: 0;
+        }
+        .data-dictionary-container ul ul {
+            margin: 4px 0 8px 18px;
+            font-size: 0.97em;
+        }
+        .data-dictionary-container li {
+            margin-bottom: 7px;
+            line-height: 1.5;
+        }
+        .content {
+            flex: 2 1 500px;
+            background: var(--accent);
+            border-radius: 18px;
+            padding: 40px 36px 36px 36px;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            transition: box-shadow 0.2s;
+            min-width: 0;
+        }
+        .content:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+        }
+        h2 {
+            text-align: center;
+            color: var(--text);
+            margin-bottom: 28px;
+            letter-spacing: 1px;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .image-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .image-list li {
+            background: #fff;
+            border: 1.5px solid #ffe2a8;
+            color: var(--text-light);
+            font-size: 1.08em;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: box-shadow 0.18s;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+            outline: none;
+            user-select: none;
+        }
+        .image-list li:hover, .image-list li.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary-dark);
+            box-shadow: 0 2px 8px rgba(255, 179, 71, 0.13);
+        }
+        #graphDisplay {
+            margin-top: 28px;
+            text-align: center;
+            min-height: 320px;
+        }
+        #graphImage {
+            max-width: 95%;
+            max-height: 500px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+            display: none;
+            margin: 0 auto;
+            background: #fff;
+        }
+        #defaultMsg {
+            color: #888;
+            font-size: 1.08em;
+            margin-top: 40px;
+        }
+        @media (max-width: 1100px) {
+            .main-flex {
+                flex-direction: column;
+                gap: 18px;
+                max-width: 98vw;
+            }
+            .data-dictionary-container, .content {
+                max-width: 100%;
+            }
+            .data-dictionary-container {
+                margin: 0 auto;
+            }
+        }
+        @media (max-width: 700px) {
+            .content {
+                padding: 14px 2vw 14px 2vw;
+                border-radius: 10px;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .image-list li {
+                font-size: 1em;
+                padding: 10px 10px;
+            }
+            #graphImage {
+                max-height: 180px;
+            }
+            .data-dictionary-container {
+                padding: 10px 6px 8px 10px;
+                font-size: 0.97em;
+            }
+        }
+        @media (max-width: 400px) {
+            .content, .data-dictionary-container {
+                padding: 8px 1vw 8px 1vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-flex">
+        
+        <div class="content">
+            <h2>Survey: Feature Relationships</h2>
+            <ul class="image-list" id="imageList">
+                <li tabindex="0" onclick="showGraph(this, 'Age.png')">Age vs Heart Disease</li>
+                <li tabindex="0" onclick="showGraph(this, 'chestpain.png')">Chest Pain vs Heart Disease</li>
+                <li tabindex="0" onclick="showGraph(this, 'sex.png')">Sex vs Heart Disease</li>
+                <li tabindex="0" onclick="showGraph(this, 'thalasmia.png')">Thalassemia vs Heart Disease</li>
+                <li tabindex="0" onclick="showGraph(this, 'cholestoral.png')">Cholesterol and Thalassemia vs Heart Disease</li>
+                <li tabindex="0" onclick="showGraph(this, 'feature-importance.png')">Feature Importance</li>
+                <li tabindex="0" onclick="showGraph(this, 'correlationmatrix.png')">Correlation Matrix</li>
+            </ul>
+            <div id="graphDisplay">
+                <div id="defaultMsg">Select a feature to view its relationship with heart disease.</div>
+                <img id="graphImage" src="" alt="Graph will be displayed here" />
+            </div>
+        </div>
+    </div>
+    <script>
+        // Allow keyboard navigation for accessibility
+        document.querySelectorAll('.image-list li').forEach(li => {
+            li.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        function showGraph(listItem, imageName) {
+            // Remove 'active' class from all list items
+            document.querySelectorAll('.image-list li').forEach(li => li.classList.remove('active'));
+            // Add 'active' class to the clicked item
+            listItem.classList.add('active');
+            // Show the image
+            const imgElement = document.getElementById('graphImage');
+            const defaultMsg = document.getElementById('defaultMsg');
+            imgElement.src = "{{ url_for('static', filename='img/') }}" + imageName;
+            imgElement.alt = imageName.replace('.png', '').replace(/[-_]/g, ' ').replace(/([A-Z])/g, ' $1').trim() + " graph";
+            imgElement.style.display = 'block';
+            defaultMsg.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

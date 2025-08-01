@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Check Heart Disease</title>
+    <style>
+        :root {
+            --primary: #ff9800;
+            --primary-dark: #f76918;
+            --accent: #fffbe6;
+            --card-bg: #fff;
+            --shadow: 0 6px 32px rgba(0,0,0,0.13);
+            --input-bg: #fffbe6;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #fceab0 0%, #fdd282 100%);
+            min-height: 100vh;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 24px 8px;
+        }
+        .container {
+            width: 100%;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        .content {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 38px 36px 32px 36px;
+            box-shadow: var(--shadow);
+            margin: 0 auto;
+            transition: box-shadow 0.2s;
+        }
+        .content:hover {
+            box-shadow: 0 12px 36px rgba(0,0,0,0.16);
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            font-size: 2.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        h2 {
+            text-align: center;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 22px;
+            font-size: 1.15rem;
+            font-weight: 400;
+            font-style: italic;
+        }
+        p.instructions {
+            color: #666;
+            font-size: 1.08rem;
+            margin-bottom: 22px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        hr {
+            border: none;
+            border-top: 1.5px solid #ffe2a8;
+            margin: 18px 0 10px 0;
+        }
+        .content > p {
+            text-align: center;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+        .content > p a {
+            color: var(--primary-dark);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        details.feature-info {
+            background: #fffbe6;
+            border-radius: 8px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+            padding: 12px 18px 8px 18px;
+            margin-bottom: 22px;
+            color: #333;
+            font-size: 1em;
+        }
+        details.feature-info summary {
+            font-weight: bold;
+            color: var(--primary-dark);
+            cursor: pointer;
+            outline: none;
+            font-size: 1.08em;
+        }
+        details.feature-info ul {
+            margin: 8px 0 0 18px;
+            padding: 0;
+        }
+        details.feature-info li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 18px;
+            justify-content: space-between;
+        }
+        label {
+            flex-basis: 100%;
+            color: #444;
+            font-weight: 600;
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid #ffe2a8;
+            border-radius: 6px;
+            background: var(--input-bg);
+            font-size: 1rem;
+            margin-bottom: 2px;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+        }
+        input[type="number"]:focus {
+            border: 1.5px solid var(--primary-dark);
+            outline: none;
+            box-shadow: 0 2px 8px rgba(255, 179, 71, 0.13);
+            background: #fff;
+        }
+        button[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, var(--primary-dark) 60%, var(--primary) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.15rem;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(255, 179, 71, 0.10);
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #df321b 60%, #ffb347 100%);
+            box-shadow: 0 4px 16px rgba(255, 179, 71, 0.18);
+        }
+        #result {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 1.13rem;
+            color: #333;
+            min-height: 28px;
+            font-weight: 600;
+        }
+        @media (max-width: 700px) {
+            .container {
+                max-width: 98vw;
+            }
+            .content {
+                padding: 18px 2vw 18px 2vw;
+            }
+            h1 {
+                font-size: 1.4rem;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+            form {
+                gap: 10px 0;
+            }
+        }
+        @media (max-width: 480px) {
+            .content {
+                padding: 10px 1vw 10px 1vw;
+                border-radius: 10px;
+            }
+            label, input[type="number"] {
+                font-size: 0.98rem;
+            }
+            button[type="submit"] {
+                font-size: 1rem;
+                padding: 11px;
+            }
+            details.feature-info {
+                padding: 8px 4px 6px 8px;
+                font-size: 0.97em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Heart Disease Risk Predictor</h1>
+            <h2>Predict your likelihood of heart disease</h2>
+            <p class="instructions">
+                Please fill out the following health indicators as accurately as possible. 
+                Once you submit, the system will predict your risk of having heart disease.
+            </p>
+            <details class="feature-info">
+                <summary>ℹ️ Feature Info (click to expand)</summary>
+                <ul>
+                    <li><b>age</b>: Age of the patient in years</li>
+                    <li><b>sex</b>: 1 = male; 0 = female</li>
+                    <li><b>cp</b>: Chest pain type
+                        <ul>
+                            <li>0: Typical angina</li>
+                            <li>1: Atypical angina</li>
+                            <li>2: Non-anginal pain</li>
+                            <li>3: Asymptomatic</li>
+                        </ul>
+                    </li>
+                    <li><b>trestbps</b>: Resting blood pressure (mm Hg)</li>
+                    <li><b>chol</b>: Serum cholesterol (mg/dl)</li>
+                    <li><b>fbs</b>: Fasting blood sugar &gt; 120 mg/dl (1 = true; 0 = false)</li>
+                    <li><b>restecg</b>: Resting electrocardiographic results (0, 1, 2)</li>
+                    <li><b>thalach</b>: Maximum heart rate achieved</li>
+                    <li><b>exang</b>: Exercise-induced angina (1 = yes; 0 = no)</li>
+                    <li><b>oldpeak</b>: ST depression induced by exercise relative to rest</li>
+                    <li><b>slope</b>: Slope of the peak exercise ST segment</li>
+                    <li><b>ca</b>: Number of major vessels (0-3) colored by fluoroscopy</li>
+                    <li><b>thal</b>: Thalassemia (3 = normal; 6 = fixed defect; 7 = reversible defect)</li>
+                </ul>
+            </details>
+            <hr>
+            <form id="heartDiseaseForm" autocomplete="off">
+                <label for="age">Age:</label>
+                <input type="number" id="age" required />
+
+                <label for="sex">Sex (1 = male; 0 = female):</label>
+                <input type="number" id="sex" required />
+
+                <label for="cp">Chest Pain Type:</label>
+                <input type="number" id="cp" required />
+
+                <label for="trestbps">Resting Blood Pressure:</label>
+                <input type="number" id="trestbps" required />
+
+                <label for="chol">Cholesterol:</label>
+                <input type="number" id="chol" required />
+
+                <label for="fbs">Fasting Blood Sugar (1 = true; 0 = false):</label>
+                <input type="number" id="fbs" required />
+
+                <label for="restecg">Resting Electrocardiographic Results:</label>
+                <input type="number" id="restecg" required />
+
+                <label for="thalach">Max Heart Rate Achieved:</label>
+                <input type="number" id="thalach" required />
+
+                <label for="exang">Exercise Induced Angina (1 = yes; 0 = no):</label>
+                <input type="number" id="exang" required />
+
+                <label for="oldpeak">ST depression induced by exercise relative to rest:</label>
+                <input type="number" id="oldpeak" required step="0.01" />
+
+                <label for="slope">Slope of the peak exercise ST segment:</label>
+                <input type="number" id="slope" required />
+
+                <label for="ca">Number of major vessels (0-3) colored by fluoroscopy:</label>
+                <input type="number" id="ca" required />
+
+                <label for="thal">Thalassemia (3 = normal; 6 = fixed defect; 7 = reversible defect):</label>
+                <input type="number" id="thal" required />
+
+                <button type="submit">Predict</button>
+            </form>
+            <div id="result"></div>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
