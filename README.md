@@ -3,7 +3,32 @@
 A Machine Learning-based web application that predicts the likelihood of heart disease from user health data.  
 This project combines Python, Flask, and Scikit-Learn to build an ML model and expose it through a backend API, with visualizations and ROC curve support.
 
----
+Website images:
+<img width="1920" height="1080" alt="Screenshot (143)" src="https://github.com/user-attachments/assets/e93f79fb-13ab-46a9-ad79-d7793ad21cef" />
+
+<img width="1920" height="1080" alt="Screenshot (144)" src="https://github.com/user-attachments/assets/772602f3-f605-411b-9660-b53fb6f2420a" />
+
+<img width="1920" height="1080" alt="Screenshot (145)" src="https://github.com/user-attachments/assets/db81f44f-9efa-4cd5-b7e1-15a967cf304f" />
+
+<img width="1920" height="1080" alt="Screenshot (146)" src="https://github.com/user-attachments/assets/325ca1d9-479d-41d2-87c4-d507e82cab17" />
+
+<img width="1920" height="1080" alt="Screenshot (147)" src="https://github.com/user-attachments/assets/5f481fae-0a0d-4d02-9d9e-215ebe736f34" />
+
+<img width="1920" height="1080" alt="Screenshot (148)" src="https://github.com/user-attachments/assets/a5ed6592-8e73-4891-9c09-b3f1ac9ee7e2" />
+
+<img width="1920" height="1080" alt="Screenshot (149)" src="https://github.com/user-attachments/assets/0fe465f1-9c71-485c-863f-a4842b82c54f" />
+
+<img width="1920" height="1080" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/c835dc2d-baae-4cd0-bdc9-ad18935e6cdf" />
+
+<img width="1920" height="1080" alt="Screenshot (151)" src="https://github.com/user-attachments/assets/9b9deed9-91f5-467f-b5ba-694a818e4767" />
+
+<img width="1920" height="1080" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/e30dd9b7-7c00-4086-82c9-013ebcb7fcc2" />
+
+<img width="1920" height="1080" alt="Screenshot (153)" src="https://github.com/user-attachments/assets/14cb110d-3331-4a50-844a-831701f85d9f" />
+
+<img width="1920" height="1080" alt="Screenshot (155)" src="https://github.com/user-attachments/assets/a5f8ae28-b7a2-4be8-a242-e3432a0f882b" />
+
+
 
 ## 📌 Project Overview
 
@@ -99,31 +124,6 @@ Helps visualize classification quality
 ✔ Add user authentication & dashboards
 ✔ Improve model using feature engineering and cross-validation
 ✔ Save models using more robust methods (e.g., Pickle, ONNX)
-
-Website images:
-<img width="1920" height="1080" alt="Screenshot (143)" src="https://github.com/user-attachments/assets/e93f79fb-13ab-46a9-ad79-d7793ad21cef" />
-
-<img width="1920" height="1080" alt="Screenshot (144)" src="https://github.com/user-attachments/assets/772602f3-f605-411b-9660-b53fb6f2420a" />
-
-<img width="1920" height="1080" alt="Screenshot (145)" src="https://github.com/user-attachments/assets/db81f44f-9efa-4cd5-b7e1-15a967cf304f" />
-
-<img width="1920" height="1080" alt="Screenshot (146)" src="https://github.com/user-attachments/assets/325ca1d9-479d-41d2-87c4-d507e82cab17" />
-
-<img width="1920" height="1080" alt="Screenshot (147)" src="https://github.com/user-attachments/assets/5f481fae-0a0d-4d02-9d9e-215ebe736f34" />
-
-<img width="1920" height="1080" alt="Screenshot (148)" src="https://github.com/user-attachments/assets/a5ed6592-8e73-4891-9c09-b3f1ac9ee7e2" />
-
-<img width="1920" height="1080" alt="Screenshot (149)" src="https://github.com/user-attachments/assets/0fe465f1-9c71-485c-863f-a4842b82c54f" />
-
-<img width="1920" height="1080" alt="Screenshot (150)" src="https://github.com/user-attachments/assets/c835dc2d-baae-4cd0-bdc9-ad18935e6cdf" />
-
-<img width="1920" height="1080" alt="Screenshot (151)" src="https://github.com/user-attachments/assets/9b9deed9-91f5-467f-b5ba-694a818e4767" />
-
-<img width="1920" height="1080" alt="Screenshot (152)" src="https://github.com/user-attachments/assets/e30dd9b7-7c00-4086-82c9-013ebcb7fcc2" />
-
-<img width="1920" height="1080" alt="Screenshot (153)" src="https://github.com/user-attachments/assets/14cb110d-3331-4a50-844a-831701f85d9f" />
-
-<img width="1920" height="1080" alt="Screenshot (155)" src="https://github.com/user-attachments/assets/a5f8ae28-b7a2-4be8-a242-e3432a0f882b" />
 
 
 
