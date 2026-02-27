@@ -5,4 +5,4 @@ model = joblib.load('app/model/heart_disease_model.pkl')
 
 def predict_heart_disease(features):
     prediction = model.predict([features])
-    return "Heart Disease" if prediction[0] == 1 else "No Heart Disease"
+    return "Heart Disease" if prediction[0] == 0 else "No Heart Disease"
